@@ -6,7 +6,7 @@ const log = debug('inventory:transaksi:');
 const { Parser } = require("json2csv");
 const fs = require('fs');
 const moment = require('moment');
-const { split } = require('lodash');  
+// const { split } = require('lodash');  
 
 const BarangMasukService = require('../../services/barang_masuk');
 const BarangKeluarService = require('../../services/barang_keluar');

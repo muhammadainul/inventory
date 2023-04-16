@@ -1,13 +1,18 @@
 const debug = require('debug');
 const log = debug('inventory:services:');
 
-const { isEmpty, toInteger, isInteger } = require('lodash');
+const { isEmpty, toInteger } = require('lodash');
 const moment = require('moment');
 const fs = require('fs');
 
-const { Barang, Kategori } = require('../models');
+const { 
+    Barang, 
+    Kategori,
+    Barang_masuk,
+    Barang_keluar,
+    Persediaan 
+} = require('../models');
 const { Op } = require('sequelize');
-const sequelize = require('sequelize');
 
 async function Create (files, barangData) {
     const {
@@ -149,6 +154,12 @@ async function Delete (barangData) {
             raw: true
         })
         if (!checkBarang) throw { error: 'Barang tidak tersedia.' };
+
+        await Persediaan.destroy({ where: { barang_id: id } });
+
+        await Barang_masuk.destroy({ where: { barang_id: id } });
+
+        await Barang_keluar.destroy({ where: { barang_id: id } });
         
         await Barang.destroy({ where: { id } });
 
