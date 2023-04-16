@@ -1,0 +1,77 @@
+
+<form class="form-horizontal" id="formUpdateUser">
+    <div class="form-group">
+        <input type="hidden" id="id" value="<%= typeof result.id !== 'undefined' ? result.id : '' %>">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Depan </label>
+        <div class="col-md-9">
+            <input type="text" id="nama_depan" class="form-control" 
+            name="nama_depan" placeholder="Nama Depan" value="<%= typeof result.nama_depan !== 'undefined' ? result.nama_depan : '' %>"
+            required disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Belakang </label>
+        <div class="col-md-9">
+            <input type="text" id="nama_belakang" 
+            class="form-control" name="nama_belakang"
+            value="<%= typeof result.nama_belakang !== 'undefined' ? result.nama_belakang : '' %>" placeholder="Nama Belakang" required disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Username </label>
+        <div class="col-md-9">
+            <input type="text" id="username"
+            class="form-control" name="username"
+            value="<%= typeof result.username !== 'undefined' ? result.username : '' %>" placeholder="Username" required disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email </label>
+        <div class="col-md-9">
+            <input type="text" id="email"
+            class="form-control" name="email"
+            value="<%= typeof result.email !== 'undefined' ? result.email : '' %>" placeholder="Email" required disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Lahir </label>
+        <div class="col-md-9">
+            <input type="date" id="ttl"
+            class="form-control" name="ttl"
+            value="<%= typeof result.tanggal_lahir !== 'undefined' ? result.tanggal_lahir : '' %>" placeholder="Tempat / Tanggal Lahir" required disabled>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Jenis Kelamin </label>
+        <div class="col-md-9">
+            <select id="jenis_kelamin" class="form-control" 
+            name="jenis_kelamin" required disabled>
+                <option value="">Jenis Kelamin</option>
+                    <option value="<%= result.jenis_kelamin %>" <% if (result.jenis_kelamin == 'l') { %> selected <% } %>>Laki-Laki</option>
+                    <option value="<%= result.jenis_kelamin %>" <% if (result.jenis_kelamin == 'p') { %> selected <% } %>>Perempuan</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="form-field-1"> Status </label>
+        <div class="col-md-1">
+            <input type="checkbox" id="enabled"
+            class="form-control" name="enabled" <% if (result.enabled == 1) { %> checked <% } else {} %> 
+            value="<%= result.enabled == 1 %>" placeholder="Status">
+        </div>
+    </div>
+    <div class="clearfix form-actions">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                Simpan
+            </button>
+
+            &nbsp; &nbsp; &nbsp;
+            <button class="btn" type="reset">
+                <i class="ace-icon fa fa-undo bigger-110"></i>
+                Reset
+            </button>
+        </div>
+    </div>
+</form>

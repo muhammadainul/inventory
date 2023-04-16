@@ -1,0 +1,87 @@
+
+<form class="form-horizontal" id="formAddBarang">
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kode Barang </label>
+        <div class="col-md-9">
+            <input type="text" id="kode_barang" class="form-control" 
+            name="kode_barang" placeholder="Kode Barang" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Barang </label>
+        <div class="col-md-9">
+            <input type="text" id="nama_barang" 
+            class="form-control" name="nama_barang" placeholder="Nama Barang" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Harga Beli </label>
+        <div class="col-md-9">
+            <input type="number" min="1" step="any" id="harga"
+            class="form-control" name="harga" placeholder="Harga Barang" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Harga Jual </label>
+        <div class="col-md-9">
+            <input type="number" min="1" step="any" id="harga_jual"
+            class="form-control" name="harga_jual" placeholder="Harga Jual" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Keterangan </label>
+        <div class="col-md-9">
+            <textarea id="keterangan" 
+            class="form-control" name="keterangan" 
+            placeholder="Deskripsi Barang" required>
+        </textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kategori </label>
+        <div class="col-md-9">
+            <select id="kategori_id" class="form-control" 
+            name="kategori_id" placeholder="Kategori" required>
+                <option value="">Kategori</option>
+                <% result.forEach(row => { %>
+                    <option value="<%= row.id %>"><%= row.kategori %></option>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Input </label>
+        <div class="col-md-9">
+            <input type="datetime-local" id="tanggal_input" 
+            class="form-control" name="tanggal_input" placeholder="Tanggal Input" required>
+        </div>
+    </div> -->
+    <div class="form-group mb-3">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Gambar </label>
+        <!-- <div class="widget-box"> -->
+            <div class="widget-body">
+                <div class="widget-main">
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="file" id="id-input-file-3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+    <div class="clearfix form-actions">
+        <div class="col-md-offset-3 col-md-9">
+            <button class="btn btn-info" type="submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                Simpan
+            </button>
+
+            &nbsp; &nbsp; &nbsp;
+            <button class="btn" type="reset">
+                <i class="ace-icon fa fa-undo bigger-110"></i>
+                Reset
+            </button>
+        </div>
+    </div>
+</form>

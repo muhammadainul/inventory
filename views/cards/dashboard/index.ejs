@@ -1,0 +1,78 @@
+<div class="col-sm-12 infobox-container">
+    <div class="col-sm-4">
+        <div class="infobox infobox-blue" style="border: none;">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-archive"></i>
+            </div>
+
+            <div class="infobox-data">
+                <span class="infobox-data-number" id="totalBarangMasuk">0</span>
+                <div class="infobox-content">Total Barang Masuk</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="infobox infobox-pink" style="border: none;">
+        <div class="infobox-icon">
+            <i class="ace-icon fa fa-shopping-cart"></i>
+        </div>
+
+        <div class="infobox-data">
+            <span class="infobox-data-number" id="totalBarangKeluar">0</span>
+            <div class="infobox-content">Total Barang Keluar</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="infobox infobox-red" style="border: none;">
+        <div class="infobox-icon">
+            <i class="ace-icon fa fa-tasks"></i>
+        </div>
+
+        <div class="infobox-data">
+            <span class="infobox-data-number" id="totalStokTersedia">0</span>
+            <div class="infobox-content">Total Stok Tersedia</div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <div class="infobox infobox-red">
+        <div class="infobox-icon">
+            <i class="ace-icon fa fa-leaf"></i>
+        </div>
+
+        <div class="infobox-data">
+            <span class="infobox-data-number">7</span>
+            <div class="infobox-content">experiments</div>
+        </div>
+    </div> -->
+
+    <div class="space-6"></div>
+</div>
+
+<div class="vspace-12-sm"></div>
+
+<div class="col-sm-6" style="margin-top: 2%;">
+    <h5 class="text-muted">
+        <!-- <i class="ace-icon fa fa-signal"></i> -->
+    
+    </h5>
+
+    <div id="chart">
+        <canvas id="chartTotalBarangMasuk"></canvas>
+        <p id="noDataTotalBarangMasuk"></p>
+    </div>
+</div>
+
+<div class="col-sm-6" style="margin-top: 2%;">
+    <h5 class="text-muted">
+        <!-- <i class="ace-icon fa fa-signal"></i> -->
+        
+    </h5>
+    <div id="chart">
+        <canvas id="chartTotalBarangKeluar"></canvas>
+        <p id="noDataTotalBarangKeluar"></p>
+    </div>
+</div>
